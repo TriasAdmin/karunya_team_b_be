@@ -11,6 +11,6 @@ export async function postApi(req: Request, res: Response) {
     return MainService.postApi(req, res);
 }
 export async function updateApi(req: Request, res: Response) {
-    console.log('frontend made a call');
+    console.log('frontend made a update call');
     return MainService.updateApi(req, res);
 }
