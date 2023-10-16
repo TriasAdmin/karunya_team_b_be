@@ -2,7 +2,6 @@ import { PORT_SETTINGS } from "./constant";
 import * as HACKATHON from "./routes/hackathon.routes";
 const express = require("express");
 const { Application } = require ("express");
-import * as bodyParser from "body-parser";
 const cors = require ("cors");
 
 var corsOptions ={
@@ -25,7 +24,6 @@ export class App {
   settings() {
     this.app.set("port", this.port || 3019);
     this.app.use(cors(corsOptions))
-    this.app.use(bodyParser.json())
     this.routes();
   }
 
