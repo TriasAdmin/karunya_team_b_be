@@ -3,6 +3,7 @@ import * as HACKATHON from "./routes/hackathon.routes";
 const express = require("express");
 const { Application } = require ("express");
 const cors = require ("cors");
+var bodyParser = require('body-parser')
 
 var corsOptions ={
   origin: "*",
@@ -24,6 +25,7 @@ export class App {
   settings() {
     this.app.set("port", this.port || 3019);
     this.app.use(cors(corsOptions))
+    this.app.use(bodyParser.json())
     this.routes();
   }
 
